@@ -1,0 +1,9 @@
+<h1><%= @product.name %></h1>
+<h5><%= @product.description %></h5>
+<h5>Quantity: <%= @product.quantity %></h5>
+<h5>Price: <%=  @product.formatted_price %></h5>
+
+
+<p><%= link_to "Edit product", edit_product_path(@product) %></p>
+
+<p><%= button_to "Delete product", @product, :method=>:delete, data: {confirm: 'Are you sure?'} %></p>
