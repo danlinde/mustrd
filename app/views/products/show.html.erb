@@ -1,1 +1,5 @@
 <h1><%= @product.name %></h1>
+
+<p><%= link_to "Edit product", edit_product_path(@product) %></p>
+
+<p><%= button_to "Delete product", @product, :method=>:delete, data: {confirm: 'Are you sure?'} %></p>
