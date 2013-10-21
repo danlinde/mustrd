@@ -18,7 +18,7 @@ describe 'User' do
       click_button 'Sign up'
 
       expect(current_path).to eq root_path
-      expect(page).to have_css('.notice', text: 'Ready to spread, Ketchup')
+      expect(page).to have_css('.alert', text: "You're ready to spread.")
     end
 
   end
