@@ -10,12 +10,18 @@ end
 
 describe 'an individual product' do
 	before(:each) do
-		Product.create(name: 'a product')
+		Product.create(name: 'a product', description: 'blah', quantity: 200, price: 21.00)
 		visit '/products'
 		click_link "a product"
 	end
 	it 'should have its own page' do
 		expect(page).to have_content 'a product'
+	end
+
+	it 'should display details about the product' do
+		expect(page).to have_content 'blah'
+		expect(page).to have_content '200'
+		expect(page).to have_content '21.00'
 	end
 
 	it 'can be edited' do
