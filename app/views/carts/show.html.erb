@@ -1,0 +1,7 @@
+<h2>Cart</h2>
+
+<% @products_with_quantity.each do |product, quantity| %>
+	<p><%= product.name %></p>
+	<p><%= product.formatted_price %></p>
+	<p><%= quantity %></p>
+<% end %>

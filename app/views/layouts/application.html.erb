@@ -47,7 +47,11 @@
         </button>
 
         <a class="navbar-brand" href="#">Mustrd</a>
+
         <ul class="nav navbar-nav navbar-right">
+          <div class= 'item_count'>
+              <%= link_to pluralize(current_cart.count, 'item'), current_cart, id: 'cart-link' %>
+          </div>
           <% if current_user %>
             <li><%= link_to "Sign out", destroy_user_session_path %></li>
           <% else %>
@@ -69,9 +73,6 @@
       <div class="row">
         <div class="col-lg-9">
           <%= bootstrap_flash %>
-          <div class= 'item_count'>
-              <%= pluralize current_cart.count, 'item' %>
-          </div>
           <%= yield %>
         </div>
         <div class="col-lg-3">
