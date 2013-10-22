@@ -18,6 +18,12 @@ describe 'Homepage' do
       end
     end
 
+    it 'should not have a sidebar' do
+      visit root_path
+
+      expect(page).not_to have_css '.sidebar-nav'
+    end
+
   end  
 
 end

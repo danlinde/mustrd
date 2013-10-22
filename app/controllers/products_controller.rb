@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
 
 	def homepage
 		@products = Product.all
+		@hide_sidebar = true
 	end
 
 	def show
