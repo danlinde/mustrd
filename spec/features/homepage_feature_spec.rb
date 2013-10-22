@@ -4,15 +4,17 @@ describe 'Homepage' do
 
   context 'list of products for sale' do
 
-    let(:iphone1) { create(:product) }
-    let(:iphone2) { create(:product) }
+    before(:all) do
+      @iphone1 = create(:product)
+      @iphone2 = create(:product)
+    end
 
     it 'should list the products' do
       visit root_path
 
       within '.product-list' do
-        expect(page).to have_css('.product-name', text: 'iPhone1')
-        expect(page).to have_css('.product-name', text: 'iPhone2')
+        expect(page).to have_css('.product-name', text: @iphone1.name)
+        expect(page).to have_css('.product-name', text: @iphone2.name)
       end
     end
 

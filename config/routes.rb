@@ -1,6 +1,6 @@
 Mustrd::Application.routes.draw do
 
-  root to: 'users#poupon'
+  root to: 'products#homepage'
   
   devise_for :users
   resource :users, only: [:show]
