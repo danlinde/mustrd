@@ -46,7 +46,7 @@
           <span class="icon-bar"></span>
         </button>
 
-        <a class="navbar-brand" href="#">Mustrd</a>
+        <a class="navbar-brand" href="/">Mustrd</a>
         <ul class="nav navbar-nav navbar-right">
           <% if current_user %>
             <li><%= link_to "Sign out", destroy_user_session_path %></li>
@@ -67,8 +67,11 @@
 
     <div class="container">
       <div class="row">
-
-        <div class="col-lg-9">
+        <% if @hide_sidebar %>
+          <div class="col-lg-12">
+        <% else %>
+          <div class="col-lg-9">
+        <% end %>
           <%= bootstrap_flash %>
           <div class= 'item_count'>
               <%= pluralize current_cart.count, 'item' %>
