@@ -69,6 +69,9 @@
       <div class="row">
         <div class="col-lg-9">
           <%= bootstrap_flash %>
+          <div class= 'item_count'>
+              <%= pluralize current_cart.count, 'item' %>
+          </div>
           <%= yield %>
         </div>
         <div class="col-lg-3">

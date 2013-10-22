@@ -1,8 +1,6 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :product do
-  	name 'iphone'
-  	price '199.00'
+  factory :cart do
   end
 end
