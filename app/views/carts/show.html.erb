@@ -1,7 +1,17 @@
-<h2>Cart</h2>
+<h2>Your Cart</h2>
 
-<% @products_with_quantity.each do |product, quantity| %>
-	<p><%= product.name %></p>
-	<p><%= product.formatted_price %></p>
-	<p><%= quantity %></p>
-<% end %>
+<table class="col-md-6">
+	<% @items.each do |item| %>
+		<tr>
+			<td>Qty: <%= item.qty %></td>
+			<td><%= item.name %></td>
+			<td><%= item.price.in_pounds %></td>
+			<td class="item-price"><%= item.amount.in_pounds %></td>
+		</tr>
+	<% end %>
+
+	<tr class="total_line">
+		<td colspan="3" align="left">Total</td>
+		<td class="total-cell"><%= current_cart.total.in_pounds %></td>
+	</tr>
+</table>

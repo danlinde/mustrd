@@ -5,7 +5,7 @@ describe 'an empty cart' do
 
 	it 'should initially be empty' do
 		visit product_path(iphone)
-		expect(page).to have_css '.item_count', text: '0 items'
+		expect(page).to have_css '#cart-link', text: '0 items'
 	end
 end
 
@@ -17,14 +17,20 @@ describe 'a cart' do
 	end
 	
 	it 'can have items added to it' do
-		expect(page).to have_css '.item_count', text: '1 item'
-		expect(page).not_to have_css '.item_count', text: '1 items'
+		expect(page).to have_css '#cart-link', text: '1 item'
+		expect(page).not_to have_css '#cart-link', text: '1 items'
 	end
 
 	it 'can be viewed' do
 		click_link 'cart-link'
-		expect(page).to have_content "iphone"
-		expect(page).to have_content "199.00"
+		expect(page).to have_content "iPhone"
+		expect(page).to have_content "599.90"
+	end
+
+	it "should show a total" do
+		click_link 'cart-link'
+		expect(page).to have_content "Total"
+		expect(page).to have_css '.total-cell', text: '£599.90'
 	end
 
 	it 'should show an image of the product' do
