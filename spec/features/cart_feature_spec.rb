@@ -9,7 +9,8 @@ describe 'the cart' do
 	end
 
 	it 'can have items added to it' do
-		visit product_path(iphone)
+		FactoryGirl.create(:product)
+		visit products_path
 		click_button 'Add to Cart', :match => :first
 
 		expect(page).to have_css '.item_count', text: '1 item'
