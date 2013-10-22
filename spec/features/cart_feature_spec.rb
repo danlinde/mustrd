@@ -23,8 +23,8 @@ describe 'a cart' do
 
 	it 'can be viewed' do
 		click_link 'cart-link'
-		expect(page).to have_content "iphone"
-		expect(page).to have_content "199.00"
+		expect(page).to have_content "iPhone1"
+		expect(page).to have_content "599.90"
 	end
 
 	it 'should show an image of the product' do

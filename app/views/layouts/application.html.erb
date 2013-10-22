@@ -48,7 +48,7 @@
 
         <a class="navbar-brand" href="/">Mustrd</a>
         <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to pluralize(current_cart.count, 'item'), current_cart, id: 'cart-link' %></li>
+            <li class="item_count"><%= link_to pluralize(current_cart.count, 'item'), current_cart, id: 'cart-link' %></li>
           <% if current_user %>
             <li><%= link_to "Sign out", destroy_user_session_path %></li>
           <% else %>
