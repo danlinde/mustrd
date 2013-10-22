@@ -3,6 +3,11 @@ class ProductsController < ApplicationController
 		@products = Product.all
 	end
 
+	def homepage
+		@products = Product.all
+		@hide_sidebar = true
+	end
+
 	def show
 		@product = Product.find(params[:id])
 	end

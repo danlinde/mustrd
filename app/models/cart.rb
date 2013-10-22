@@ -13,12 +13,13 @@ class Cart < ActiveRecord::Base
 		end
 	end
 
+end
+
 	# def items
 	# 	products.group_by(&:id).map do |id,product_group|
 	# 		LineItem.new(product_group)
 	# 	end
 	# end
-end
 
 # class LineItem
 # 	def initialize(product_group)
