@@ -16,3 +16,4 @@
 /tmp
 
 /config/intializers/stripe.rb
+/config/aws.yml
