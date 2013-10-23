@@ -5,37 +5,50 @@ class Cart < ActiveRecord::Base
 		products.count
 	end
 
-	def products_with_quanitity
-		hash = Hash.new(0)
-		products.inject(hash) do |hash, product|
-			hash[product] += 1
-			hash
+
+	def items
+		products.group_by(&:id).map do |id,product_group|
+			LineItem.new(product_group)
 		end
+	end
+
+	def total
+		memo = 0
+		items.each do |i|
+			memo += i.amount
+		end
+		memo
 	end
 
 end
 
-	# def items
-	# 	products.group_by(&:id).map do |id,product_group|
-	# 		LineItem.new(product_group)
-	# 	end
-	# end
 
-# class LineItem
-# 	def initialize(product_group)
-# 		@item = product_group[0]
-# 		@qty = product_group.count
-# 	end
+class LineItem
+	def initialize(product_group)
+		@item = product_group[0]
+		@qty = product_group.count
+	end
 
-# 	def name
-# 		@item.name
-# 	end
+	def name
+		@item.name
+	end
 
-# 	def formatted_price
-# 		sprintf "£%.2f", @item.price
-# 	end
+	def price
+		@item.price
+	end
 
-# 	def qty
-# 		@qty
-# 	end
-# end
+	def qty
+		@qty
+	end
+
+	def amount
+		@item.price * @qty
+	end
+
+end
+
+class BigDecimal
+	def in_pounds
+		sprintf "£%.2f", self
+	end
+end
