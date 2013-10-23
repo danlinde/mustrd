@@ -9,4 +9,9 @@ describe Product do
 		expect(product.image.exists?).to be_true
 	end
 
+	it 'can have a thumbnail of the image' do
+		product = Product.create(image: example_image)
+		expect(product.image.exists?(:thumb)).to be_true
+	end
+
 end
