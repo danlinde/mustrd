@@ -34,6 +34,12 @@ gem 'twitter-bootstrap-rails',
 # Devise for user authentication and authorisation
 gem 'devise'
 
+# Paperclip for file uploads
+gem 'paperclip'
+
+# AWS SDK to store files
+gem 'aws-sdk'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

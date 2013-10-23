@@ -2,6 +2,7 @@
 <h5><%= @product.description %></h5>
 <h5>Quantity: <%= @product.quantity %></h5>
 <h5>Price: <%=  @product.formatted_price %></h5>
+<h5><%= image_tag @product.image.url, class: 'product_image' %></h5>
 
 <p><%= link_to "Edit product", edit_product_path(@product) %></p>
 
