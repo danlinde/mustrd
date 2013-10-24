@@ -36,7 +36,8 @@ describe 'a cart' do
 	end
 
 	it 'should show an image of the product' do
-		pending
+		click_link 'cart-link'
+		expect(page).to have_css "#product-image"
 	end
 
 	it 'can have quantities updated' do

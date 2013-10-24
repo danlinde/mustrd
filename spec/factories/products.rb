@@ -7,6 +7,7 @@ FactoryGirl.define do
   	description "Not really a phone"
   	quantity 10
   	price 599.90
+  	image_file_name "image"
   end
   
 end

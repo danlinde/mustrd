@@ -4,6 +4,7 @@
 	<% @items.each do |item| %>
 		<tr>
 			<td>Qty: <%= item.qty %></td>
+			<td id='product-image'><%= image_tag item.image %></td>
 			<td><%= item.name %></td>
 			<td><%= item.price.in_pounds %></td>
 			<td class="item-price"><%= item.amount.in_pounds %></td>
@@ -11,7 +12,7 @@
 	<% end %>
 
 	<tr class="total_line">
-		<td colspan="3" align="left">Total</td>
+		<td colspan="4" align="left">Total</td>
 		<td class="total-cell"><%= current_cart.total.in_pounds %></td>
 	</tr>
 </table>

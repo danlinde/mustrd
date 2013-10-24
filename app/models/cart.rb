@@ -45,6 +45,11 @@ class LineItem
 		@item.price * @qty
 	end
 
+	def image
+		@item.image.url(:thumbnail)
+	end
+
+
 end
 
 class BigDecimal
