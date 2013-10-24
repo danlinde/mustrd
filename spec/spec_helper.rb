@@ -44,3 +44,7 @@ RSpec.configure do |config|
   # Use shorthand for FactoryGirl
   config.include FactoryGirl::Syntax::Methods
 end
+
+def emails
+  ActionMailer::Base.deliveries
+end
