@@ -15,3 +15,5 @@
 		<td class="total-cell"><%= current_cart.total.in_pounds %></td>
 	</tr>
 </table>
+
+<%= button_to 'Checkout', new_charge_path, :method => :get, class: 'cart-button' %>
