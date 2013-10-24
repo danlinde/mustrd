@@ -19,6 +19,10 @@ class ChargesController < ApplicationController
 	    :currency    => 'gbp'
 	  )
 
+	  Order.create(:number_of_items => current_cart.count)
+	  session[:cart_id] = nil
+	  create_empty_cart
+
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message
 	  redirect_to charges_path
